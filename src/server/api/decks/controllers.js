@@ -37,15 +37,13 @@ export const index = {
 }
 
 export const detail = {
-    get (req, res) {
-        Deck.findOne({
-            _id: req.params.id
-        })
-        .then((deck) => {
-            if (!deck) return res.status(404).send('No decks with that ID')
+    async get (req, res) {
+        try {
+            let deck = await Deck.findOne({ _id: req.params.id })
             return res.json(deck)
-        })
-        .catch((err) => res.handleServerError(err))
+        } catch (err) {
+            return res.handleServerError(err)
+        }
     },
 
     update (req, res) {
