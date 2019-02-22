@@ -69,6 +69,7 @@
     "eslint-plugin-promise": "^3.8.0",
     "eslint-plugin-standard": "^3.1.0",
     "file-loader": "^1.1.11",
+    "morgan": "^1.9.1",
     "now-client": "^1.1.6",
     "rimraf": "^2.6.3",
     "stylus": "^0.54.5",

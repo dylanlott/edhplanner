@@ -1,5 +1,6 @@
 import { urlencoded, json } from 'body-parser'
 import cookieParser from 'cookie-parser'
+import morgan from 'morgan'
 // import cors from 'cors'
 import express from 'express'
 import mongoose from 'mongoose'
@@ -9,6 +10,10 @@ import config from '../../nuxt.config'
 import apiRoutes from './api'
 
 const app = express()
+
+if (process.env.NODE_ENV !== 'production') {
+  app.use(morgan())
+}
 
 // Global middleware
 // only allow http://127.0.0.1:3000 and http://localhost:3000
