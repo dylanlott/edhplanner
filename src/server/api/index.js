@@ -1,4 +1,5 @@
 import { Router } from 'express'
+import mongoose from 'mongoose'
 import usersRoutes from './users/routes'
 import adminRoutes from './admin/routes'
 import deckRoutes from './decks/routes'
@@ -14,7 +15,10 @@ router.use('/decks', deckRoutes)
 router.use('/admin', authenticate(), adminRoutes)
 
 router.get('/', (req, res) => {
-  res.json(listEndpoints(router))
+  return res.json({
+    endpoints: listEndpoints(router),
+    mongo: mongoose.connection.readyState
+  })
 })
 
 export default router

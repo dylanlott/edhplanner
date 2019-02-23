@@ -1,0 +1,28 @@
+version: "3"
+services:
+  nuxt:
+    build:
+      dockerfile: ./Dockerfile
+      context: ./
+    ports:
+      - 3000:3000
+    env_file:
+      - ./.prod.env
+    networks: 
+      - app-tier
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+    env_file:
+      - ./.prod.env
+    depends_on:
+      - nuxt
+    networks: 
+      - app-tier
+
+networks: 
+  app-tier:
