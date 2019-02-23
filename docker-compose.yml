@@ -11,18 +11,18 @@ services:
     networks: 
       - app-tier
 
-  nginx:
-    image: nginx:latest
-    ports:
-      - "80:80"
-    volumes:
-      - ./nginx:/etc/nginx/conf.d
-    env_file:
-      - ./.prod.env
-    depends_on:
-      - nuxt
-    networks: 
-      - app-tier
+  # nginx:
+  #   image: nginx:latest
+  #   ports:
+  #     - "80:80"
+  #   volumes:
+  #     - ./nginx:/etc/nginx/conf.d
+  #   env_file:
+  #     - ./.prod.env
+  #   depends_on:
+  #     - nuxt
+  #   networks: 
+  #     - app-tier
 
 networks: 
   app-tier:

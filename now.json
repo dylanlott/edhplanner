@@ -1,4 +1,8 @@
 {
   "name": "edhplanner",
-  "env": ".prod.env"
+  "engines": {
+    "node": "7.4.0"
+  },
+  "dotenv": ".prod.env",
+  "type": "docker"
 }
