@@ -121,7 +121,7 @@ export default {
           to: '/cards'
         }
       ],
-      name: 'edhplanner',
+      name: 'EDH Planner',
       mini: true,
       right: null
     }

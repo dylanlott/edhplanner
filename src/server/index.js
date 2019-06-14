@@ -1,6 +1,7 @@
 import { urlencoded, json } from 'body-parser'
 import cookieParser from 'cookie-parser'
 import morgan from 'morgan'
+import mongojs from 'mongojs'
 // import cors from 'cors'
 import express from 'express'
 import mongoose from 'mongoose'
@@ -10,6 +11,9 @@ import config from '../../nuxt.config'
 import apiRoutes from './api'
 
 const app = express()
+
+const db = mongojs(process.env.DB_URL, ['edhplanner'])
+app.set('db', db)
 
 if (process.env.NODE_ENV !== 'production') {
   app.use(morgan())

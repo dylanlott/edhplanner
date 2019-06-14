@@ -10,3 +10,5 @@ static/workbox-sw*.js
 demo/dump.rdb
 demo/.dev.env
 .prod.env
+
+cards/
