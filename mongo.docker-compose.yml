@@ -1,0 +1,19 @@
+# this is used to start up the correct mongo instance.
+version: '3'
+
+services:
+  mongodb:
+    image: 'bitnami/mongodb:3.6'
+    restart: always
+    ports:
+      - "29017:27017"
+    volumes:
+      - 'edhplanner_data:/bitnami'
+    environment:
+      - MONGODB_USERNAME=shakezulaadmin
+      - MONGODB_PASSWORD=1vR6GPLwwrkeguLemZkAtvCcYjMWqVhoVvd4jqZcKeKbFHdbLB8tgsgGazZYSPyv
+      - MONGODB_DATABASE=edhplanner
+
+volumes:
+  edhplanner_data:
+    driver: local
