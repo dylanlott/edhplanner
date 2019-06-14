@@ -5,6 +5,11 @@
                 <v-flex>
                     <h1 class="display-2">Decks</h1>
                 </v-flex>
+                <v-flex>
+                    <v-btn to="/decks/create/">
+                       <v-icon>add</v-icon> New
+                    </v-btn>
+                </v-flex>
                 <v-flex xs12 sm6 lg4>
                     <v-card :to="{name: 'decks-id', params: {id: deck._id}}" :key="index" v-for="(deck, index) in decks">
                         <v-card-title class="display-1">{{ deck.name }}</v-card-title>

@@ -14,14 +14,10 @@
                     ></v-text-field>
                     <v-text-field
                         v-model="search"
-                        label="Pick A Commander"
+                        label="Search Commanders"
                     ></v-text-field> 
 
-                    <code>
-                        {{ deck }}
-                    </code>
-
-                    <v-list dense>
+                    <v-list dense outline>
                         <v-list-tile 
                         :key="index" 
                         @click="choose(commander)"
